@@ -10,46 +10,70 @@
     <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
 
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/fontawesome-all.min.css" />
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <title>ProjectZ</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container">
-        <a class="navbar-brand" href="#">Test</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">A</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">B</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">C</a>
-            </li>
-          </ul>
-        </div>
-      </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id = "navBar">
+        
     </nav>
     <div class="app">
-        
-        <h1>ProjectZ</h1>
-        
+        <div class="list-group h-100">
+            <a href="newtest.html" id = "startTest" class="list-group-item list-group-item-action flex-column align-items-start  mh-25 ">
+                <div class="d-flex w-100 ">
+                    <i class="fas fa-pencil-alt"></i>
+                    <h4 class="mb-1">Nouveau test</h4>
+                </div>
+                <p class="mb-1">Commencer un test</p>
+                <hr class = "interItemLine"/>
+            </a>
+            
+            <a href="#" id = "training" class="list-group-item list-group-item-action flex-column align-items-start  mh-25">
+                <div class="d-flex w-100 ">
+                    <i class="fas fa-heartbeat"></i>
+                    <h4 class="mb-1">Entrainement</h4>
+                </div>
+                <p class="mb-1">Entrainez vous avant de lancer un test</p>
+                <hr class = "interItemLine"/>
+            </a>
+            
+            <a href="#" id = "results" class="list-group-item list-group-item-action flex-column align-items-start  mh-25">
+                <div class="d-flex w-100 ">
+                    <i class="fas fa-graduation-cap" data-fa-transform="rotate-345"></i>
+                    <h4 class="mb-1">Résultats</h4>
+                </div>
+                <p class="mb-1">Trouvez quels sont vos points forts et vos points faibles</p>
+                <hr class = "interItemLine"/>
+            </a>
+            
+            <a href="#" id = "obtenirQuestions"class="list-group-item list-group-item-action flex-column align-items-start  mh-25">
+                <div class="d-flex w-100 ">
+                    <i class="fas fa-user-md"></i>
+                  <h4 class="mb-1">Amis</h4>
+                </div>
+                <p class="mb-1">Comparez vous avec vos amis</p>
+                <hr class = "interItemLine"/>
+            </a>
+            
+            <a href="#" id = "contact"class="list-group-item list-group-item-action flex-column align-items-start  mh-25">
+                <div class="d-flex w-100 ">
+                    <i class="fas fa-briefcase-medical"></i>
+                    <h4 class="mb-1">Obtenir plus de questions</h4>
+                </div>
+                <p class="mb-1">Choisissez parmis des dizaines de packs de questions</p>
+            </a>
+        </div>
     </div>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/fontawesome-all.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
+    <script type = "text/javascript">
+        $("#navBar").load("navbar.html");
+    </script>
 </body>
 
 </html>

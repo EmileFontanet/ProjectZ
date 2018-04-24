@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/fontawesome-all.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/newtestquizz.css" />
+    <title>ProjectZ</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id = "navBar">
+    </nav>
+    <div id= "questionZone" class="w-100 h-100 ">
+        
+     </div>
+    <div id="answerZone" class="w-100 h-100" >
+        <div class="custom-control custom-checkbox">
+            <input class="custom-control-input" id="customCheck1"  type="checkbox">
+          <label class="custom-control-label" for="customCheck1">Disabled custom checkbox</label></br>
+            <input class="custom-control-input" id="customCheck2"  type="checkbox">
+          <label class="custom-control-label" for="customCheck2">Disabled custom checkbox</label></br>
+            <input class="custom-control-input" id="customCheck3"  type="checkbox">
+            <label class="custom-control-label" for="customCheck3">Disabled custom checkbox</label></br>
+          <input class="custom-control-input" id="customCheck4"  type="checkbox">
+          <label class="custom-control-label" for="customCheck4">Disabled custom checkbox</label>
+        </div>
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/fontawesome-all.min.js"></script>
+    <script type="text/javascript" src="questions/freepack.json"></script>
+    <script type="text/javascript" src="js/quizzmaker.js"></script>
+    <script type = "text/javascript">
+        $("#navBar").load("navbar.html");
+        displayQuestionEnvironment(json1["question1"]);
+    </script>
+    
+</body>
+
+</html>
