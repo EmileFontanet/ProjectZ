@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/fontawesome-all.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/newtestquizz.css" />
+    <title>ProjectZ</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark h-10" id = "navBar">
+    </nav>
+    <div id= "questionZone" class="w-100  ">
+        <div class="card text-white bg-primary mb-3 w-100 h-100">
+            
+            <div class="card-header" id="theme">
+                Thème                
+            </div>    
+            
+            <div class="card-body">
+                <p class="card-text" id = "enonce"></p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </div>
+        </div>
+     </div>
+    <div id="answerZone" class="w-100 " >
+        <div class="repdiv custom-control custom-checkbox ">
+            <input class="custom-control-input" id="customCheck1"  type="checkbox"/>
+            <label class="custom-control-label" for="customCheck1">Rep1</label>
+        </div>
+        
+        <div class="repdiv custom-control custom-checkbox">
+            <input class="custom-control-input" id="customCheck2"  type="checkbox"/>
+            <label class="custom-control-label" for="customCheck2">Rep2</label>
+        </div>
+        
+        <div class="repdiv custom-control custom-checkbox">
+            <input class="custom-control-input" id="customCheck3"  type="checkbox"/>
+            <label class="custom-control-label" for="customCheck3">Rep3</label>
+        </div>
+        
+        <div class="repdiv custom-control custom-checkbox">
+            <input class="custom-control-input" id="customCheck4"  type="checkbox"/>
+            <label class="custom-control-label" for="customCheck4">Rep4</label>
+        </div>
+        
+        <div class="repdiv custom-control custom-checkbox">
+            <input class="custom-control-input" id="customCheck5"  type="checkbox"/>
+            <label class="custom-control-label" for="customCheck5">Rep5</label>
+        </div>
+         
+    </div>
+    <footer class=" w-100">
+        <div id = "nextquestionbutton" class="w-100 ">
+            <i class="fas fa-angle-double-right" id="button"></i>
+        </div>
+        <div class="progress w-100">
+            <div class="progress-bar progress-bar-striped bg-info " role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    </footer>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>   
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/fontawesome-all.min.js"></script>
+    <script type="text/javascript" src="questions/questions.json"></script>
+    <script type="text/javascript" src="js/quizzmaker.js"></script>
+    <script type = "text/javascript">
+        $("#navBar").load("navbar.html");
+        //displayQuestionEnvironment(json1["question1"]);
+    </script>
+    
+</body>
+
+</html>
