@@ -22,47 +22,50 @@
         <div class="card text-white bg-primary mb-3 w-100 h-100">
             
             <div class="card-header" id="theme">
-                Thème                
             </div>    
             
             <div class="card-body">
-                <p class="card-text" id = "enonce"></p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                <p class="card-text" id = "enonce"></p>
             </div>
         </div>
      </div>
     <div id="answerZone" class="w-100 " >
         <div class="repdiv custom-control custom-checkbox ">
             <input class="custom-control-input" id="customCheck1"  type="checkbox"/>
-            <label class="custom-control-label" for="customCheck1">Rep1</label>
+            <label class="custom-control-label" for="customCheck1" id = "rep1"></label>
         </div>
         
         <div class="repdiv custom-control custom-checkbox">
             <input class="custom-control-input" id="customCheck2"  type="checkbox"/>
-            <label class="custom-control-label" for="customCheck2">Rep2</label>
+            <label class="custom-control-label" for="customCheck2" id = "rep2"></label>
         </div>
         
         <div class="repdiv custom-control custom-checkbox">
             <input class="custom-control-input" id="customCheck3"  type="checkbox"/>
-            <label class="custom-control-label" for="customCheck3">Rep3</label>
+            <label class="custom-control-label" for="customCheck3" id = "rep3"></label>
         </div>
         
         <div class="repdiv custom-control custom-checkbox">
             <input class="custom-control-input" id="customCheck4"  type="checkbox"/>
-            <label class="custom-control-label" for="customCheck4">Rep4</label>
+            <label class="custom-control-label" for="customCheck4" id = "rep4"></label>
         </div>
         
-        <div class="repdiv custom-control custom-checkbox">
+        <div class="repdiv custom-control custom-checkbox" id ="lastRepDiv">
             <input class="custom-control-input" id="customCheck5"  type="checkbox"/>
-            <label class="custom-control-label" for="customCheck5">Rep5</label>
+            <label class="custom-control-label" for="customCheck5" id = "rep5"></label>
         </div>
          
     </div>
     <footer class=" w-100">
         <div id = "nextquestionbutton" class="w-100 ">
-            <i class="fas fa-angle-double-right" id="button"></i>
+           
+            
+            <button type="button" class="btn btn-primary" id = "button">
+                  <i class="fas fa-angle-double-right" ></i>
+            </button>  
         </div>
         <div class="progress w-100">
-            <div class="progress-bar progress-bar-striped bg-info " role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar progress-bar-striped bg-info progress-bar-animated" role="progressbar" style="width: 50%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
     </footer>
     <script type="text/javascript" src="cordova.js"></script>
@@ -73,7 +76,8 @@
     <script type="text/javascript" src="js/quizzmaker.js"></script>
     <script type = "text/javascript">
         $("#navBar").load("navbar.html");
-        //displayQuestionEnvironment(json1["question1"]);
+        uncheckCheckboxes();
+        displayQuestion(json1[actualQuestion]);
     </script>
     
 </body>

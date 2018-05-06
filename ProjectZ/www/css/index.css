@@ -51,28 +51,29 @@ body{
 .fa-graduation-cap{
     font-size: 45px;
     margin-right : 10px;
-    color: #873345;
+    color: #b73e3e;
 }
 .fa-pencil-alt{
     font-size: 45px;
-    margin-right : 10px;
-    color: #873345;
+    margin-right : 10px;;
+    color: #f4a142;
+    /*color: #873345;*/
 }
 .fa-user-md{
     font-size: 45px;
     margin-right : 10px;
-    color: #873345;
+    color: #78a54a;
 }
 .fa-heartbeat{
     font-size: 45px;
     margin-right : 10px;
-    color: #873345;
+    color: #688eb7;
 }
 
 .fa-briefcase-medical{
     font-size: 45px;
     margin-right : 10px;
-    color: #873345;
+    color: #a570a3;
 }
 p{
     position: absolute;
