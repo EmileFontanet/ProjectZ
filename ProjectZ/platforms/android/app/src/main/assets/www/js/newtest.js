@@ -2,7 +2,7 @@ function onDeviceReady() {
     console.log('Device ready');
 }
 document.addEventListener('deviceready', onDeviceReady, false);
-var themes = ["Thème 1", "Thème 2", "Thème 3", "Thème 4", "Thème 5", "Thème 6", "Thème 7", "Thème 8", "Thème 9"];
+var themes = ["Microbiologie", "Thème 2", "Thème 3", "Thème 4", "Thème 5", "Thème 6", "Thème 7", "Thème 8", "Thème 9"];
 var theme;
 var themeListItem;
 for (theme in themes) {
