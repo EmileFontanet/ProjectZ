@@ -13,7 +13,7 @@ function displayQuestion(question) {
     $('#rep5').text(question['reponseE']);
     $('#enonce').text(question['enonce']);
     $('#theme').text(question['theme']);
-   var questionPosition = {1 : 'A', 2 : 'B', 3 : 'C', 4 : 'D', 5 : 'E'};
+   questionPosition = {1 : 'A', 2 : 'B', 3 : 'C', 4 : 'D', 5 : 'E'};
     return questionPosition;
 }
 function fadeAndChangeQuestion(question){
@@ -59,7 +59,7 @@ function fadeAndChangeQuestion(question){
     $("#rep4").fadeIn();
     $("#enonce").fadeIn();
     $("#theme").fadeIn();
-    var questionPosition = {1 : 'A', 2 : 'B', 3 : 'C', 4 : 'D', 5 : 'E'}
+    questionPosition = {1 : 'A', 2 : 'B', 3 : 'C', 4 : 'D', 5 : 'E'}
     return questionPosition;
 }
 function checkAnswers(questionPosition, answers, question){
@@ -101,7 +101,7 @@ function uncheckCheckboxes(){
 }
 $('#button').click(function() {
     var answers = getUserAnswers();
-    var questionPosition = displayQuestion(json1[actualQuestion]);
+    //var questionPosition = displayQuestion(json1[actualQuestion]);
     if(checkAnswers(questionPosition, answers, json1[actualQuestion])){
         console.log('Bonne réponse');
         score += 1
@@ -117,7 +117,7 @@ $('#button').click(function() {
     }
     actualQuestion = "question" + String(i);
     uncheckCheckboxes();
-    var questionPosition = fadeAndChangeQuestion(json1[actualQuestion]);
+    questionPosition = fadeAndChangeQuestion(json1[actualQuestion]);
     
     
 });
