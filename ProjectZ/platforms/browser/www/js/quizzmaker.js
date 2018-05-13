@@ -2,18 +2,64 @@ function onDeviceReady() {
     console.log('Device ready');
 }
 document.addEventListener('deviceready', onDeviceReady, false);
-var i = 1;
+var theme = "microbiologie";
+var quizThemeName = 'quizTest' + String(theme);
+var numberOfQuestions = Object.keys(json1).length
+//si c'est la première fois qu'on fait ce quiz, on crée la variable en mémoire locale 
+if(localStorage.getItem(quizThemeName) === null){ 
+    var i = 1;
+    var actualQuestion = "question" + String(i);
+    var testDate = new Date();
+    testDate = String(testDate);
+    var quizTestObj = {};
+    quizTestObj[testDate] = {};
+    quizTestObj['unfinishedTest'] = testDate;
+    quizTestObj[testDate]['i'] = i;
+    localStorage.setItem(quizThemeName, JSON.stringify(quizTestObj));
+}
+
+//si la variable en mémoire locale existe déjà, on regarde si il existe un test en cours d'exécution
+else{
+    var quizTestObj = JSON.parse(localStorage.getItem(quizThemeName));
+    if(quizTestObj['unfinishedTest'] !== 'none'){
+        var testDate = quizTestObj['unfinishedTest'];
+        var i = quizTestObj[testDate]['i'];
+        $('#progressbar').width(String(100*(i-1)/(numberOfQuestions-1)) +"%");
+        var actualQuestion = "question" + String(i);
+    }
+    else{
+        var i = 1;
+        var actualQuestion = "question" + String(i);
+        var testDate = new Date();
+        testDate = String(testDate);
+        quizTestObj['unfinishedTest'] = testDate;
+        quizTestObj[testDate] = {};
+        quizTestObj[testDate]['i'] = i;
+        localStorage.setItem(quizThemeName, JSON.stringify(quizTestObj));
+    }
+}
 var score = 0 ;
-var actualQuestion = "question" + String(i);
+
+
 function displayQuestion(question) {
     $('#rep1').text(question["reponseA"]);
     $('#rep2').text(question['reponseB']);
     $('#rep3').text(question['reponseC']);
     $('#rep4').text(question['reponseD']);
-    $('#rep5').text(question['reponseE']);
+    if(question['type'] == 'A'){
+        $('#lastRepDiv').show();
+        $('#rep5').text(question['reponseE']);
+    }
+    else{
+        $('#lastRepDiv').hide();
+    }
+    
     $('#enonce').text(question['enonce']);
     $('#theme').text(question['theme']);
-   questionPosition = {1 : 'A', 2 : 'B', 3 : 'C', 4 : 'D', 5 : 'E'};
+    questionPosition = {1 : 'A', 2 : 'B', 3 : 'C', 4 : 'D', 5 : 'E'};
+    quizTestObj[testDate][actualQuestion] = {};
+    quizTestObj[testDate][actualQuestion]['questionPosition'] = questionPosition;
+    
     return questionPosition;
 }
 function fadeAndChangeQuestion(question){
@@ -60,6 +106,8 @@ function fadeAndChangeQuestion(question){
     $("#enonce").fadeIn();
     $("#theme").fadeIn();
     questionPosition = {1 : 'A', 2 : 'B', 3 : 'C', 4 : 'D', 5 : 'E'}
+    quizTestObj[testDate][actualQuestion] = {};
+    quizTestObj[testDate][actualQuestion]['questionPosition'] = questionPosition;
     return questionPosition;
 }
 function checkAnswers(questionPosition, answers, question){
@@ -71,6 +119,8 @@ function checkAnswers(questionPosition, answers, question){
         userTrueAnswers.push(questionPosition[correspondanceCheckbox[entry]]);
     });
     var rightAnswers = question['bonneReponse'].split(',');
+    quizTestObj[testDate][actualQuestion]['userAnswers'] = userTrueAnswers;
+    quizTestObj[testDate][actualQuestion]['rightAnswers'] = rightAnswers;
     rightAnswers.forEach(function(entry){
         if(userTrueAnswers.includes(entry)){
             score +=1
@@ -110,14 +160,19 @@ $('#button').click(function() {
         console.log('Mauvaise réponse');
     }
     i += 1;
-    $('#progressbar').width(String(100*(i-1)/(Object.keys(json1).length-1)) +"%");
+    quizTestObj[testDate]['i'] = i;
+    $('#progressbar').width(String(100*(i-1)/(numberOfQuestions-1)) +"%");
     if(i == Object.keys(json1).length){
-        alert("quizz fini, vous avez obtenu un score de " + String(score) + " sur " + String(Object.keys(json1).length));
+        alert("quizz fini, vous avez obtenu un score de " + String(score) + " sur " + String(numberOfQuestions));
+        quizTestObj['unfinishedTest'] = 'none';
+        localStorage.setItem(quizThemeName, JSON.stringify(quizTestObj));
         window.location.replace("index.html");
     }
     actualQuestion = "question" + String(i);
     uncheckCheckboxes();
     questionPosition = fadeAndChangeQuestion(json1[actualQuestion]);
+    localStorage.setItem(quizThemeName, JSON.stringify(quizTestObj));
+    
     
     
 });
