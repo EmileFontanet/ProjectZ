@@ -8,7 +8,7 @@ var numberOfQuestions = Object.keys(json1).length
 //si c'est la première fois qu'on fait ce quiz, on crée la variable en mémoire locale 
 if(localStorage.getItem(quizThemeName) === null){ 
     var i = 1;
-    var actualQuestion = "question" + String(i);
+    var currentQuestion = "question" + String(i);
     var testDate = new Date();
     testDate = String(testDate);
     var quizTestObj = {};
@@ -25,11 +25,11 @@ else{
         var testDate = quizTestObj['unfinishedTest'];
         var i = quizTestObj[testDate]['i'];
         $('#progressbar').width(String(100*(i-1)/(numberOfQuestions-1)) +"%");
-        var actualQuestion = "question" + String(i);
+        var currentQuestion = "question" + String(i);
     }
     else{
         var i = 1;
-        var actualQuestion = "question" + String(i);
+        var currentQuestion = "question" + String(i);
         var testDate = new Date();
         testDate = String(testDate);
         quizTestObj['unfinishedTest'] = testDate;
@@ -39,6 +39,9 @@ else{
     }
 }
 var score = 0 ;
+if(i == 1){
+    $('#lastquestionbutton').hide();
+}
 
 
 function displayQuestion(question) {
@@ -56,9 +59,10 @@ function displayQuestion(question) {
     
     $('#enonce').text(question['enonce']);
     $('#theme').text(question['theme']);
+    $('#questionType').text("Type " + question['type']);
     questionPosition = {1 : 'A', 2 : 'B', 3 : 'C', 4 : 'D', 5 : 'E'};
-    quizTestObj[testDate][actualQuestion] = {};
-    quizTestObj[testDate][actualQuestion]['questionPosition'] = questionPosition;
+    quizTestObj[testDate][currentQuestion] = {};
+    quizTestObj[testDate][currentQuestion]['questionPosition'] = questionPosition;
     
     return questionPosition;
 }
@@ -79,10 +83,14 @@ function fadeAndChangeQuestion(question){
     function(){
         $('#enonce').text(question['enonce']);
     });
-    $("#theme").fadeOut('slow', 
+    $("#questionType").fadeOut(
+    function(){
+        $('#questionType').text("Type " + question['type']);
+    });
+    /*$("#theme").fadeOut('slow', 
     function(){
         $('#theme').text(question['theme']);
-    });
+    });*/
     $("#rep1").fadeOut(
     function(){
         $('#rep1').text(question['reponseA']);
@@ -104,10 +112,11 @@ function fadeAndChangeQuestion(question){
     $("#rep3").fadeIn();
     $("#rep4").fadeIn();
     $("#enonce").fadeIn();
-    $("#theme").fadeIn();
+    $("#questionType").fadeIn();
+   // $("#theme").fadeIn();
     questionPosition = {1 : 'A', 2 : 'B', 3 : 'C', 4 : 'D', 5 : 'E'}
-    quizTestObj[testDate][actualQuestion] = {};
-    quizTestObj[testDate][actualQuestion]['questionPosition'] = questionPosition;
+    quizTestObj[testDate][currentQuestion] = {};
+    quizTestObj[testDate][currentQuestion]['questionPosition'] = questionPosition;
     return questionPosition;
 }
 function checkAnswers(questionPosition, answers, question){
@@ -119,8 +128,8 @@ function checkAnswers(questionPosition, answers, question){
         userTrueAnswers.push(questionPosition[correspondanceCheckbox[entry]]);
     });
     var rightAnswers = question['bonneReponse'].split(',');
-    quizTestObj[testDate][actualQuestion]['userAnswers'] = userTrueAnswers;
-    quizTestObj[testDate][actualQuestion]['rightAnswers'] = rightAnswers;
+    quizTestObj[testDate][currentQuestion]['userAnswers'] = userTrueAnswers;
+    quizTestObj[testDate][currentQuestion]['rightAnswers'] = rightAnswers;
     rightAnswers.forEach(function(entry){
         if(userTrueAnswers.includes(entry)){
             score +=1
@@ -149,10 +158,30 @@ function getUserAnswers(){
 function uncheckCheckboxes(){
     $(".custom-control-input").prop('checked', false);
 }
-$('#button').click(function() {
+$('#lastQuestionButton').click(function() {
     var answers = getUserAnswers();
-    //var questionPosition = displayQuestion(json1[actualQuestion]);
-    if(checkAnswers(questionPosition, answers, json1[actualQuestion])){
+    if(checkAnswers(questionPosition, answers, json1[currentQuestion])){
+        console.log('Bonne réponse');
+        score += 1
+    }
+    else{
+        console.log('Mauvaise réponse');
+    }
+    i -=1;
+    quizTestObj[testDate]['i'] = i;
+    $('#progressbar').width(String(100*(i-1)/(numberOfQuestions)) +"%");
+    currentQuestion = "question" + String(i);
+    uncheckCheckboxes();
+    questionPosition = fadeAndChangeQuestion(json1[currentQuestion]);
+    localStorage.setItem(quizThemeName, JSON.stringify(quizTestObj));
+    if(i == 1){
+        $('#lastquestionbutton').fadeOut();
+    }
+    
+});
+$('#nextQuestionButton').click(function() {
+    var answers = getUserAnswers();
+    if(checkAnswers(questionPosition, answers, json1[currentQuestion])){
         console.log('Bonne réponse');
         score += 1
     }
@@ -161,18 +190,90 @@ $('#button').click(function() {
     }
     i += 1;
     quizTestObj[testDate]['i'] = i;
-    $('#progressbar').width(String(100*(i-1)/(numberOfQuestions-1)) +"%");
-    if(i == Object.keys(json1).length){
-        alert("quizz fini, vous avez obtenu un score de " + String(score) + " sur " + String(numberOfQuestions));
+    $('#progressbar').width(String(100*(i-1)/(numberOfQuestions)) +"%");
+    if(i == 2){
+        $('#lastquestionbutton').fadeIn();
+    }
+    if(i == numberOfQuestions +1){
+        score = Math.round(score/numberOfQuestions*100);
         quizTestObj['unfinishedTest'] = 'none';
         localStorage.setItem(quizThemeName, JSON.stringify(quizTestObj));
-        window.location.replace("index.html");
+        score = 60;
+        if(score >= 50){   
+            swal(
+            {
+                tilte : "Quiz terminé",
+                text : "Vous avez obtenu un score de " + String(score) + "%, bravo !", 
+                icon : "success",
+                buttons : {
+                    recap : {
+                        text : "Récapitulatif",
+                        value : "recap"
+                    },
+                    retourMenu : {
+                        text : "Retour au menu",
+                        value : "retourMenu"
+                    }
+                },
+                closeOnClickOutside: false,
+                closeOnEsc: false
+                
+            }).then(function(){
+            window.location.replace("index.html");
+        });
+        }
+        else{
+            swal(
+            {
+                tilte : "Quiz terminé",
+                text : "Vous avez obtenu un score de " + String(score) + "%, essayez de faire mieux la prochaine fois !", 
+                icon : "error",
+                buttons : {
+                    recap : {
+                        text : "Récapitulatif",
+                        value : "recap"
+                    },
+                    retourMenu : {
+                        text : "Retour au menu",
+                        value : "retourMenu"
+                    }
+                },
+                closeOnClickOutside: false,
+                closeOnEsc: false
+            }).then(function(){
+            window.location.replace("index.html");
+        });            
+        }
+        
+        
+        
     }
-    actualQuestion = "question" + String(i);
-    uncheckCheckboxes();
-    questionPosition = fadeAndChangeQuestion(json1[actualQuestion]);
-    localStorage.setItem(quizThemeName, JSON.stringify(quizTestObj));
+    else{
+        currentQuestion = "question" + String(i);
+        uncheckCheckboxes();
+        questionPosition = fadeAndChangeQuestion(json1[currentQuestion]);
+        localStorage.setItem(quizThemeName, JSON.stringify(quizTestObj));
+    }
+    
     
     
     
 });
+$('#questionType').click(function(){
+    if(json1[currentQuestion]['type'] === "A"){
+        swal({
+            text : "Une question de type A contient 5 propositions et une seule bonne réponse.",
+            title : "Type A",
+            icon : "info",
+            button : false
+        });
+    }
+    else{
+        swal({
+            text : "Une question de type K' contient 4 propositions et le nombre de propositions correctes peut être entre 0 et 4.",
+            title : "Type K",
+            icon : "info",
+            button : false
+        });
+    }
+})

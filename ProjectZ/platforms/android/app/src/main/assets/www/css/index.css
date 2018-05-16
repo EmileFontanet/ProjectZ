@@ -2,34 +2,34 @@
     height: 100px;
     /*box-shadow: 0px 0px 4px white inset; FFEBEE*/
     border: 0;
-    background-color: #FFEBEE
+    background-color: #FFFFFF
 }
 #training{
     height: 100px;
     border: 0;
-    background-color: #FFEBEE;
+    background-color: #FFFFFF;
 }
 #results{
     height: 100px;
     border: 0;
-    background-color: #FFEBEE;
+    background-color: #FFFFFF;
 }
 #obtenirQuestions{
     height: 100px;
     border: 0;
-    background-color: #FFEBEE;
+    background-color: #FFFFFF;
 }
 #contact{
     height: 100px;
     border: 0;
-    background-color: #FFEBEE;
+    background-color: #FFFFFF;
     
     
 }
 body{
     display: flex;
     flex-direction: column;
-    background-color: #FFEBEE;
+    background-color: #FFFFFF;
 }
 .app{
 }

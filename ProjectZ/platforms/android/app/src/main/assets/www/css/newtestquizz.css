@@ -14,7 +14,7 @@ html{
     height: 100%;
 }
 body{
-    background-color: #FFEBEE;
+    background-color: #FFFFFF;
     height: 100%;
     
     
@@ -28,6 +28,9 @@ body{
 #theme{
     padding-bottom: -5px;
 }
+#questionType:hover{
+     cursor: help;
+}
 label{
     font-size: 1.5em;
     margin-bottom: 10px;
@@ -35,6 +38,9 @@ label{
 .repdiv{
     margin-bottom: 10px;
     border-bottom: 1px grey solid;   
+}
+#lastRepDiv{
+    
 }
 footer{
     max-height: 15%;
@@ -44,11 +50,14 @@ footer{
 }
 .progress{
     position: fixed;
-    height: 25px;
+    height: 15px;
     bottom: 0;
 }
 .custom-control-label{
     font-size: 1em;
+}
+#buttons{
+    display: flex;
 }
 #nextquestionbutton{
     text-align: right;
@@ -57,3 +66,10 @@ footer{
     margin-bottom: 20px;
 }
 
+#lastquestionbutton{
+    text-align: left;
+    font-size: 3em;
+    padding-left: 45px;
+    margin-bottom: 20px;
+    opacity: 0.5;
+}

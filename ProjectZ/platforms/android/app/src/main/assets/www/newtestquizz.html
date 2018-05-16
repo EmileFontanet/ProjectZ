@@ -21,7 +21,9 @@
     <div id= "questionZone" class="w-100  ">
         <div class="card text-white bg-primary mb-3 w-100 h-100">
             
-            <div class="card-header" id="theme">
+            <div class="card-header d-flex justify-content-between" id="cardheader">
+                <div id = "theme"></div>
+                <div id = "questionType"></div>
             </div>    
             
             <div class="card-body">
@@ -57,13 +59,24 @@
          
     </div>
     <footer class=" w-100">
-        <div id = "nextquestionbutton" class="w-100 ">
-           
+        <div id = "buttons">
+            <div id = "lastquestionbutton" class="w-100 ">
+
+
+                <button type="button" class="btn btn-primary" id = "lastQuestionButton">
+                      <i class="fas fa-angle-double-left" ></i>
+                </button>  
+            </div>
             
-            <button type="button" class="btn btn-primary" id = "button">
-                  <i class="fas fa-angle-double-right" ></i>
-            </button>  
-        </div>
+            <div id = "nextquestionbutton" class="w-100 ">
+
+
+                <button type="button" class="btn btn-primary" id = "nextQuestionButton">
+                      <i class="fas fa-angle-double-right" ></i>
+                </button>  
+            </div>
+            
+        </div>    
         <div class="progress w-100">
             <div class="progress-bar progress-bar-striped bg-info progress-bar-animated" role="progressbar" id = "progressbar" style="width: 0%" ></div>
     </div>
@@ -73,11 +86,12 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/fontawesome-all.min.js"></script>
     <script type="text/javascript" src="questions/microbiologie.json"></script>
-    <script type="text/javascript" src="js/quizzmaker.js"></script>
+    <script type="text/javascript" src="js/sweetalert.min.js"></script><script type="text/javascript" src="js/quizzmaker.js"></script>
     <script type = "text/javascript">
         $("#navBar").load("navbar.html");
-        uncheckCheckboxes();
-        var questionPosition = displayQuestion(json1[actualQuestion]);
+        //uncheckCheckboxes();
+        
+        var questionPosition = displayQuestion(json1[currentQuestion]);
 
         
     </script>

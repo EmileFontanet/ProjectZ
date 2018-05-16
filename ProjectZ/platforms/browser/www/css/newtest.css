@@ -27,13 +27,13 @@ h4{
 body{
     display: flex;
     flex-direction: column;
-    background-color: #FFEBEE;
+    background-color: #FFFFFF;
 }
 #appCore{
-    background-color: #FFEBEE;
+    background-color: #FFFFFF;
 }
 .list-group-item{
     height: 100px;
     border: 0;
-    background-color: #FFEBEE;
+    background-color: #FFFFFF;
 }
