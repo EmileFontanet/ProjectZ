@@ -68,6 +68,14 @@
                 </button>  
             </div>
             
+            <div id = "checkAnswerButtonDiv" class="w-100 ">
+
+
+                <div id = "checkAnswerButton">
+                      <i class="far fa-check-circle"></i>
+                </div>  
+            </div>
+            
             <div id = "nextquestionbutton" class="w-100 ">
 
 
@@ -81,6 +89,11 @@
             <div class="progress-bar progress-bar-striped bg-info progress-bar-animated" role="progressbar" id = "progressbar" style="width: 0%" ></div>
     </div>
     </footer>
+    <script type="text/javascript">
+    window.onerror = function(message, url, lineNumber) {
+        alert("Error: "+message+" in "+url+" at line "+lineNumber);
+    }
+    </script>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>   
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
@@ -90,9 +103,7 @@
     <script type = "text/javascript">
         $("#navBar").load("navbar.html");
         //uncheckCheckboxes();
-        
         var questionPosition = displayQuestion(json1[currentQuestion]);
-
         
     </script>
     
