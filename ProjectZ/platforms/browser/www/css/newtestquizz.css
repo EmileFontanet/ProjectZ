@@ -39,7 +39,7 @@ label{
     margin-bottom: 10px;
     border-bottom: 1px grey solid;   
 }
-#lastRepDiv{
+#reponse5{
     
 }
 footer{
@@ -55,6 +55,9 @@ footer{
 }
 .custom-control-label{
     font-size: 1em;
+}
+.custom-control{
+    border-radius: 2px;
 }
 #buttons{
     display: flex;
