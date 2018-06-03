@@ -50,7 +50,11 @@ var score = 0 ;
 if(i == 1){
     $("#lastquestionbutton").hide();
 }
-
+function displayJustification(question){
+    justification = question.justification;
+    swal(justification);
+    return
+}
 function displayQuestion(question) {
     $("#rep1").text(question.reponseA);
     $("#rep2").text(question.reponseB);
@@ -271,7 +275,7 @@ $("#nextQuestionButton").click(function() {
         score = Math.round(score/numberOfQuestions*100);
         quizTestObj.unfinishedTest = "none";
         localStorage.setItem(quizThemeName, JSON.stringify(quizTestObj));
-        score = 60;
+        score = 40;
         if(score >= 50){
             swal(
             {
@@ -365,4 +369,7 @@ $(".custom-control-input").change(function() {
     if(json1[currentQuestion].type == 'A'){
         $(".custom-control-input").prop('checked', false);
         $(this).prop('checked', true);}
-});
+});//une seule option pour question de type A
+$("#theme").click(function(){
+    displayJustification(json1[currentQuestion])
+    });
