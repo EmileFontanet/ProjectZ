@@ -316,8 +316,16 @@ $("#nextQuestionButton").click(function() {
                 },
                 closeOnClickOutside: false,
                 closeOnEsc: false
-            }).then(function(){
-            window.location.replace("index.html");
+            }).then(function(result){
+                if(result === "recap"){
+                    window.localStorage.setItem("recapType", "test" );
+                    window.localStorage.setItem("recapDate", testDate );
+                    window.location.replace("recap.html");
+                }
+                else{
+                    window.location.replace("index.html");
+                }
+                
         });
         }
         }
