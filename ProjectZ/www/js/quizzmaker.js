@@ -319,6 +319,7 @@ $("#nextQuestionButton").click(function() {
             }).then(function(result){
                 if(result === "recap"){
                     window.localStorage.setItem("recapType", "test" );
+                    window.localStorage.setItem("recapThemeName", quizThemeName)
                     window.localStorage.setItem("recapDate", testDate );
                     window.location.replace("recap.html");
                 }
