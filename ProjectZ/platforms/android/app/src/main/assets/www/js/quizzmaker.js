@@ -1,7 +1,11 @@
 function onDeviceReady() {
     console.log("Device ready");
 }
+//on crée l'url du questionnaire qu'on va utiliser 
+var script = "questions/microbiologie.json";
 
+//on charge le questionnaire en question
+$("head").append('<script type="text/javascript" src="' + script + '"></script>');
 document.addEventListener("deviceready", onDeviceReady, false);
 var theme = "microbiologie";
 var quizThemeName = "quizTest" + String(theme);

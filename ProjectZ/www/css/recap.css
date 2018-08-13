@@ -13,17 +13,7 @@ h4{
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
 }
-.interItemLine {
-    position: absolute;
-    bottom: 0;
-    height: 1px;
-    margin: 0;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0;
-    background-color: #444;
-    width: 90%;
-}
+
 body{
     display: flex;
     flex-direction: column;
@@ -32,8 +22,33 @@ body{
 #appCore{
     background-color: #FFFFFF;
 }
-.list-group-item{
-    height: 100px;
-    border: 0;
-    background-color: #FFFFFF;
+#questionBoxes{
+    display: flex;
+    flex-wrap: wrap;
+}
+.questionBoxtrue{
+    background-color: rgb(0,200,0,0.7);
+    width: auto;
+    min-width: 20%;
+    max-width: 50%;
+    height: 70px;
+}
+.questionBoxfalse{
+    background-color: rgb(255,0,0,0.7);
+    min-width: 20%;
+    max-width: 50%;
+    height: 70px;
+}
+table{
+    width: 80%;
+}
+th{
+    border: 1px black solid;
+    text-align: center;
+}
+tr{
+    width. 80%;
+}
+td{
+    border: 1px black solid;
 }
