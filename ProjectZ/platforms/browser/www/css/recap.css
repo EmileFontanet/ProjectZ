@@ -27,17 +27,25 @@ body{
     flex-wrap: wrap;
 }
 .questionBoxtrue{
-    background-color: rgb(0,200,0,0.7);
+    background-color: #00C800B3;
     width: auto;
     min-width: 20%;
     max-width: 50%;
     height: 70px;
+    line-height: 70px;
+    border : 1px black solid;
+    text-align: center;
+    vertical-align: middle;
 }
 .questionBoxfalse{
-    background-color: rgb(255,0,0,0.7);
+    background-color: #FF0000B3;
     min-width: 20%;
     max-width: 50%;
     height: 70px;
+    line-height: 70px;
+    border : 1px black solid;
+     text-align: center;
+    vertical-align: middle;
 }
 table{
     width: 80%;
