@@ -30,6 +30,18 @@
     },
     "cordova-plugin-dialogs": {
       "PACKAGE_NAME": "com.phonegap.projectz"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "com.phonegap.projectz"
+    },
+    "cordova-plugin-globalization": {
+      "PACKAGE_NAME": "com.phonegap.projectz"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.phonegap.projectz"
+    },
+    "cordova-sqlite-storage": {
+      "PACKAGE_NAME": "com.phonegap.projectz"
     }
   },
   "dependent_plugins": {

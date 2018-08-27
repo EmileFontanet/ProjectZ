@@ -1,0 +1,11 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "ProjectZ",
+  "short_name": "ProjectZ",
+  "version": "com.phonegap.projectz",
+  "description": "Application project by Emile Fontanet",
+  "author": "Emile Fontanet",
+  "icons": [],
+  "start_url": "index.html"
+}

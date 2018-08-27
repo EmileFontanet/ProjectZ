@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/fontawesome-all.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>ProjectZ</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id = "navBar">
+        
+    </nav>
+    <div class="app">
+        <div class="list-group h-100">
+            <a href="newtest.html" id = "startTest" class="list-group-item list-group-item-action flex-column align-items-start  mh-25 ">
+                <div class="d-flex w-100 ">
+                    <i class="fas fa-pencil-alt"></i>
+                    <h4 class="mb-1">Nouveau test</h4>
+                </div>
+                <p class="mb-1">Commencer un test</p>
+                <hr class = "interItemLine"/>
+            </a>
+            
+            <a href="#" id = "training" class="list-group-item list-group-item-action flex-column align-items-start  mh-25">
+                <div class="d-flex w-100 ">
+                    <i class="fas fa-heartbeat"></i>
+                    <h4 class="mb-1">Entrainement</h4>
+                </div>
+                <p class="mb-1">Entrainez vous avant de lancer un test</p>
+                <hr class = "interItemLine"/>
+            </a>
+            
+            <a href="results.html" id = "results" class="list-group-item list-group-item-action flex-column align-items-start  mh-25">
+                <div class="d-flex w-100 ">
+                    <i class="fas fa-graduation-cap" data-fa-transform="rotate-345"></i>
+                    <h4 class="mb-1">Résultats</h4>
+                </div>
+                <p class="mb-1">Trouvez quels sont vos points forts et vos points faibles</p>
+                <hr class = "interItemLine"/>
+            </a>
+            
+            <a href="#" id = "obtenirQuestions"class="list-group-item list-group-item-action flex-column align-items-start  mh-25">
+                <div class="d-flex w-100 ">
+                    <i class="fas fa-user-md"></i>
+                  <h4 class="mb-1">Classement</h4>
+                </div>
+                <p class="mb-1">Comparez vous avec d'autres utilisateurs</p>
+                <hr class = "interItemLine"/>
+            </a>
+            
+            <a href="#" id = "contact"class="list-group-item list-group-item-action flex-column align-items-start  mh-25">
+                <div class="d-flex w-100 ">
+                    <i class="fas fa-briefcase-medical"></i>
+                    <h4 class="mb-1">Obtenir plus de questions</h4>
+                </div>
+                <p class="mb-1">Choisissez parmis des dizaines de packs de questions</p>
+            </a>
+        </div>
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/fontawesome-all.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type = "text/javascript">
+        $("#navBar").load("navbar.html");
+    </script>
+</body>
+
+</html>

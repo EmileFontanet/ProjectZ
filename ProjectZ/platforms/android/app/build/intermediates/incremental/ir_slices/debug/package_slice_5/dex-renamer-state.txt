@@ -1,4 +1,0 @@
-#Thu May 10 11:39:13 CEST 2018
-base.0=/home/emilio/Desktop/ProjectZ/ProjectZ/ProjectZ/platforms/android/app/build/intermediates/transforms/dexMerger/debug/25
-path.0=classes.dex
-renamed.0=classes.dex

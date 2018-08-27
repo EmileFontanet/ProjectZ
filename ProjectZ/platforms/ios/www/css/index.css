@@ -1,0 +1,86 @@
+#startTest{
+    height: 100px;
+    /*box-shadow: 0px 0px 4px white inset; FFEBEE*/
+    border: 0;
+    background-color: #FFFFFF
+}
+#training{
+    height: 100px;
+    border: 0;
+    background-color: #FFFFFF;
+}
+#results{
+    height: 100px;
+    border: 0;
+    background-color: #FFFFFF;
+}
+#obtenirQuestions{
+    height: 100px;
+    border: 0;
+    background-color: #FFFFFF;
+}
+#contact{
+    height: 100px;
+    border: 0;
+    background-color: #FFFFFF;
+    
+    
+}
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+}
+.app{
+}
+#navBar{
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+.interItemLine {
+    position: absolute;
+    bottom: 0;
+    height: 1px;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    background-color: #444;
+    width: 90%;
+}
+.fa-graduation-cap{
+    font-size: 45px;
+    margin-right : 10px;
+    color: #b73e3e;
+}
+.fa-pencil-alt{
+    font-size: 45px;
+    margin-right : 10px;;
+    color: #f4a142;
+    /*color: #873345;*/
+}
+.fa-user-md{
+    font-size: 45px;
+    margin-right : 10px;
+    color: #78a54a;
+}
+.fa-heartbeat{
+    font-size: 45px;
+    margin-right : 10px;
+    color: #688eb7;
+}
+
+.fa-briefcase-medical{
+    font-size: 45px;
+    margin-right : 10px;
+    color: #a570a3;
+}
+p{
+    position: absolute;
+    left: 90px;
+    
+}
+h4{
+    position: absolute;
+    left: 90px;
+}
