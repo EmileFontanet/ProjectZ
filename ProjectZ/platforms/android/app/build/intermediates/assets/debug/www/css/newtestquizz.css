@@ -17,12 +17,13 @@ body{
     background-color: #FFEBEE;
     height: 100%;
     
+    
 }
 #answerZone{
     padding: 20px;
-    height: 40%;
-    max-height: 70%;
+    height: auto;
     min-height: 230px;
+
 }
 #theme{
     padding-bottom: -5px;
@@ -46,7 +47,9 @@ footer{
     height: 25px;
     bottom: 0;
 }
-
+.custom-control-label{
+    font-size: 1em;
+}
 #nextquestionbutton{
     text-align: right;
     font-size: 3em;
