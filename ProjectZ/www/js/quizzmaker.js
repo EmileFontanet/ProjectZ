@@ -279,7 +279,7 @@ $("#nextQuestionButton").click(function() {
         score = Math.round(score/numberOfQuestions*100);
         quizTestObj.unfinishedTest = "none";
         localStorage.setItem(quizThemeName, JSON.stringify(quizTestObj));
-        score = 40;
+        
         if(score >= 50){
             swal(
             {
