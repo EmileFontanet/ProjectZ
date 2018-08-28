@@ -1,34 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.phonegap.projectz" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>ProjectZ</name>
-    <description>
-        Application project by Emile Fontanet
-    </description>
-    <author email="emile@infomaniak.ch">
-        Emile Fontanet
-    </author>
-    <content src="index.html" />
-    <access origin="*" />
-    <allow-intent href="http://*/*" />
-    <allow-intent href="https://*/*" />
-    <allow-intent href="tel:*" />
-    <allow-intent href="sms:*" />
-    <allow-intent href="mailto:*" />
-    <allow-intent href="geo:*" />
-    <icon density="ldpi" src="www/res/icon/android/drawable-ldpi-icon.png" />
-    <icon density="mdpi" src="www/res/icon/android/drawable-mdpi-icon.png" />
-    <icon density="hdpi" src="www/res/icon/android/drawable-hdpi-icon.png" />
-    <icon density="xhdpi" src="www/res/icon/android/drawable-xhdpi-icon.png" />
-    <icon density="xxhdpi" src="www/res/icon/android/drawable-xxhdpi-icon.png" />
-    <icon density="xxxhdpi" src="www/res/icon/android/drawable-xxxhdpi-icon.png" />
-    <allow-intent href="market:*" />
-    <preference name="loglevel" value="DEBUG" />
-    <preference name="DisallowOverscroll" value="true" />
-    <preference name="ShowSplashScreenSpinner" value="false" />
-    <preference name="android-minSdkVersion" value="16" />
-    <preference name="SplashScreenDelay" value="0" />
-    <preference name="FadeSplashScreenDuration" value="0" />
-    <preference name="AutoHideSplashScreen" value="true" />
     <feature name="Battery">
         <param name="android-package" value="org.apache.cordova.batterystatus.BatteryListener" />
     </feature>
@@ -67,4 +38,36 @@
     <feature name="SQLitePlugin">
         <param name="android-package" value="io.sqlc.SQLitePlugin" />
     </feature>
+    <feature name="Media">
+        <param name="android-package" value="org.apache.cordova.media.AudioHandler" />
+    </feature>
+    <name>ProjectZ</name>
+    <description>
+        Application project by Emile Fontanet
+    </description>
+    <author email="emile@infomaniak.ch">
+        Emile Fontanet
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <icon density="ldpi" src="www/res/icon/android/drawable-ldpi-icon.png" />
+    <icon density="mdpi" src="www/res/icon/android/drawable-mdpi-icon.png" />
+    <icon density="hdpi" src="www/res/icon/android/drawable-hdpi-icon.png" />
+    <icon density="xhdpi" src="www/res/icon/android/drawable-xhdpi-icon.png" />
+    <icon density="xxhdpi" src="www/res/icon/android/drawable-xxhdpi-icon.png" />
+    <icon density="xxxhdpi" src="www/res/icon/android/drawable-xxxhdpi-icon.png" />
+    <allow-intent href="market:*" />
+    <preference name="loglevel" value="DEBUG" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="ShowSplashScreenSpinner" value="false" />
+    <preference name="android-minSdkVersion" value="16" />
+    <preference name="SplashScreenDelay" value="0" />
+    <preference name="FadeSplashScreenDuration" value="0" />
+    <preference name="AutoHideSplashScreen" value="true" />
 </widget>

@@ -395,6 +395,22 @@ module.exports = [
     "clobbers": [
       "SQLitePlugin"
     ]
+  },
+  {
+    "id": "cordova-plugin-media.MediaError",
+    "file": "plugins/cordova-plugin-media/www/MediaError.js",
+    "pluginId": "cordova-plugin-media",
+    "clobbers": [
+      "window.MediaError"
+    ]
+  },
+  {
+    "id": "cordova-plugin-media.Media",
+    "file": "plugins/cordova-plugin-media/www/Media.js",
+    "pluginId": "cordova-plugin-media",
+    "clobbers": [
+      "window.Media"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -412,7 +428,8 @@ module.exports.metadata =
   "cordova-plugin-geolocation": "2.1.0",
   "cordova-plugin-globalization": "1.0.9",
   "cordova-plugin-inappbrowser": "1.3.0",
-  "cordova-sqlite-storage": "2.4.0"
+  "cordova-sqlite-storage": "2.4.0",
+  "cordova-plugin-media": "2.2.0"
 };
 // BOTTOM OF METADATA
 });

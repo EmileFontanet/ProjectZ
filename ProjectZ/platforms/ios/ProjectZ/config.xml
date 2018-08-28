@@ -73,6 +73,9 @@
     <feature name="SQLitePlugin">
         <param name="ios-package" value="SQLitePlugin" />
     </feature>
+    <feature name="Media">
+        <param name="ios-package" value="CDVSound" />
+    </feature>
     <name>ProjectZ</name>
     <description>
         Application project by Emile Fontanet

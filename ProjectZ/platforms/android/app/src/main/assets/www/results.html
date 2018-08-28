@@ -19,8 +19,25 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id = "navBar">
     </nav>
     <div class="app" id = "appCore">
-        <canvas id="lineChart" width="80" height="50"></canvas>
-        <canvas id = "pieChart" width = "80" height="50"></canvas>
+        <select>
+            <option value="10">10 derniers tests</option>
+            <option value="25">25 derniers tests</option>
+            <option value="50">50 derniers tests</option>
+            <option value="100">100 derniers tests</option>
+            <option value="all">Tous</option>
+        </select>
+        <div id = "divLineChart">
+            <h3>Vos derniers résultats</h3>
+            <canvas id="lineChart" ></canvas>
+        </div>
+        <div id = "divPieChart">
+            <h3>Répartition des scores obtenus</h3>
+            <canvas id = "pieChart" ></canvas>
+        </div>
+        <div id="divBarChart">
+            <h3>Moyenne par catégorie</h3>
+            <canvas id = "barChart"></canvas>
+        </div>
     </div>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>

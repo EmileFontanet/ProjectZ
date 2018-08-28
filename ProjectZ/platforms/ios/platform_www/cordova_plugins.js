@@ -479,6 +479,22 @@ module.exports = [
     "clobbers": [
       "SQLitePlugin"
     ]
+  },
+  {
+    "id": "cordova-plugin-media.MediaError",
+    "file": "plugins/cordova-plugin-media/www/MediaError.js",
+    "pluginId": "cordova-plugin-media",
+    "clobbers": [
+      "window.MediaError"
+    ]
+  },
+  {
+    "id": "cordova-plugin-media.Media",
+    "file": "plugins/cordova-plugin-media/www/Media.js",
+    "pluginId": "cordova-plugin-media",
+    "clobbers": [
+      "window.Media"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -501,7 +517,8 @@ module.exports.metadata =
   "cordova-plugin-statusbar": "2.1.3",
   "cordova-plugin-vibration": "2.1.6",
   "cordova-plugin-whitelist": "1.2.2",
-  "cordova-sqlite-storage": "2.4.0"
+  "cordova-sqlite-storage": "2.4.0",
+  "cordova-plugin-media": "2.2.0"
 };
 // BOTTOM OF METADATA
 });

@@ -162,13 +162,13 @@ function displayAnswersResults(questionPosition, answers, question){
     Object.keys(answersResults).forEach(function(entry){
         if(answersResults[entry] === true){
             $("#reponse" + String(entry)).animate({
-                backgroundColor: "rgba(0 , 255 ,0, 0.3)"
+                backgroundColor: "rgba(0,130,0,0.6)"
             }, 800);
             console.log(String(entry) + " est une bonne rep");
         }
         else{
             $("#reponse" + String(entry)).animate({
-                backgroundColor: "rgba(255 , 0 ,0, 0.3)"
+                backgroundColor: "rgba(255, 10, 10,0.6)"
             }, 800);
             console.log(String(entry) + " est une mauvaise rep");
         }
