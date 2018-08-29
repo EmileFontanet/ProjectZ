@@ -1,15 +1,3 @@
-p{
-    position: absolute;
-    left: 90px;
-    
-}
-h4{
-    position: absolute;
-    left: 40px;
-}
-.app{
-}
-
 
 body{
     background-color: #FFFFFF;
@@ -17,25 +5,20 @@ body{
 #appCore{
     background-color: #FFFFFF;
 }
-#divAroundQuestionBoxes{
-    width: 100%;
-    border: 1px red solid;
-    box-sizing: border-box;
 
-}
 #questionBoxes{
     display: flex;
     flex-wrap: wrap;
     justify-content:flex-start;
+    align-items: center;
     font-size: 0.8em;
-    border: 1px blue solid;
-    padding: auto;
+    padding: 0;
 }
 .questionBoxtrue{
     background-color: rgba(0,130,0,0.6);
     width: 22%;
     min-width: 22%;
-    max-width: 22%;
+    flex-grow: 1;
     height: 70px;
     line-height: 70px;
     border : 1px black solid;
@@ -46,7 +29,7 @@ body{
     background-color: rgba(255, 10, 10,0.6);
     width: 22%;
     min-width: 22%;
-    max-width: 22%;
+    flex-grow: 1;
     height: 70px;
     line-height: 70px;
     border : 1px black solid;
@@ -61,8 +44,13 @@ th{
     text-align: center;
 }
 tr{
-    width. 80%;
+    width: 80%;
 }
 td{
     border: 1px black solid;
+}
+#recapHeader{
+    margin-left: 15px;
+    margin-top: 25px;
+    margin-bottom: 20px;
 }

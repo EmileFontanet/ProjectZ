@@ -21,14 +21,11 @@ var script = "questions/microbiologie.json";
 
 //on charge le questionnaire en question
 $("head").append('<script type="text/javascript" src="' + script + '"></script>');
-var quizDate = window.localStorage.getItem("recapDate");
+var quizDate = new Date(window.localStorage.getItem("recapDate"));
 var quizThemeName = window.localStorage.getItem("recapThemeName");
 var quizTestObj = JSON.parse(localStorage.getItem(quizThemeName));
 
-console.log(quizTestObj[quizDate]);
-console.log(quizThemeName);
-console.log(quizDate);
-$("#titleRecap").text("Récapitulatif - Test du " + String(quizDate));
+
 var i;
 
 //on crée les divisions des questions et on les met dans la bonne classe suivant si on y a bien répondu ou pas
@@ -79,6 +76,7 @@ $(".questionBoxtrue").click(function(event){
                             <td>` + currentQuestion.justification + `</td>
                           </tr>`;
    swal({
+       
        content:{
            element: "table",
            attributes: {

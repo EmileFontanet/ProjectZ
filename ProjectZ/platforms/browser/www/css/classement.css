@@ -1,0 +1,55 @@
+body{
+    width: 100vw;
+    
+    height: auto;
+}
+#appCore{
+    text-align: center;
+}
+table{
+    width: 100%;
+    margin: auto;
+    margin-top: 15px;
+    border-top: rgba(200,200,200,0.5) solid 1px;
+    border-bottom: rgba(200,200,200,0.5) solid 1px;
+}
+.rank{
+    text-align: center;
+    width: 35px;
+}
+.nom{
+    padding-left: 5px;
+    width: 120px;
+    min-width: 50px;
+    max-width: 200px;
+    overflow-x: hidden;
+}
+.progressBar{
+    text-align: left;
+}
+.score{
+    text-align: center;
+    width: 60px;
+}
+.even{
+    background-color: rgba(230,230,230,0.6);
+}
+tr{
+    height: 40px;
+    text-align: left;
+}
+#classementTitle{
+    margin-top: 15px;
+}
+#first{
+    height: 60px;
+    font-size: 1.3em;
+}
+#second{
+    height: 50px;
+    font-size: 1.2em;
+}
+#third{
+    height: 45px;
+    font-size: 1.1em;
+}
