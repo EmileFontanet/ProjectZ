@@ -5,6 +5,7 @@ body{
 }
 #appCore{
     text-align: center;
+    height: 100%;
 }
 table{
     width: 100%;
@@ -24,8 +25,9 @@ table{
     max-width: 200px;
     overflow-x: hidden;
 }
-.progressBar{
+.progressBarDiv{
     text-align: left;
+    max-width: 200px;
 }
 .score{
     text-align: center;
@@ -52,4 +54,41 @@ tr{
 #third{
     height: 45px;
     font-size: 1.1em;
+}
+#userClassement{
+    border-top: rgba(100,100,100,0.5) solid 2px;
+    border-bottom: rgba(100,100,100,0.5) solid 2px;
+    margin-bottom: 1px;
+}
+#userRow{
+    height: 45px;
+    font-size: 1.3em;
+    background-color: rgba(104, 142, 183, 0.3);
+}
+#classementExaTitle{
+    margin-top: 30px;
+}
+#graphClassementExa{
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    margin: auto;
+
+}
+#graphDiv{
+    width: 80vw;
+    height: 50vh;
+    margin: auto;
+    min-height: 250px;
+}
+#classementExa{
+    height: 100%;
+    width: 100%;
+}
+#utilisateurs{
+    color: #78a54a;
+}
+#seuildereussite{
+    color: #f4a142;
 }
