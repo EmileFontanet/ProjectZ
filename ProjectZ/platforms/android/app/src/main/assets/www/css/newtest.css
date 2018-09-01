@@ -10,8 +10,7 @@ h4{
 .app{
 }
 #navBar{
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
+    
 }
 .interItemLine {
     position: absolute;
@@ -36,4 +35,39 @@ body{
     height: 100px;
     border: 0;
     background-color: #FFFFFF;
+}
+.exaDiv{
+    width: 90%;
+    margin: auto;
+    margin-top: 25px;
+    height: 60px;
+    margin-bottom: 25px;
+    
+}
+#exaSemTitle{
+    margin: auto;
+    text-align: center;
+    line-height: 70px;
+    background-color: rgba(244, 161, 66, 0.7);
+    color: #495057;
+    border-radius: 7px;
+
+}
+#exaAnneeTitle{
+    margin: auto;
+    text-align: center;
+    line-height: 70px;
+    background-color: rgba(165, 112, 163, 0.7);
+    color: #495057;
+    border-radius: 7px;
+
+}
+a:hover{
+    text-decoration: none;
+}
+#divSem{
+    
+}
+#divAnnee{
+    
 }

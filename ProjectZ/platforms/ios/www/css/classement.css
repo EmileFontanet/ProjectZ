@@ -42,6 +42,7 @@ tr{
 }
 #classementTitle{
     margin-top: 15px;
+    margin-bottom: 15px;
 }
 #first{
     height: 60px;
@@ -58,7 +59,7 @@ tr{
 #userClassement{
     border-top: rgba(100,100,100,0.5) solid 2px;
     border-bottom: rgba(100,100,100,0.5) solid 2px;
-    margin-bottom: 1px;
+    margin-bottom: 50px;
 }
 #userRow{
     height: 45px;
@@ -66,7 +67,7 @@ tr{
     background-color: rgba(104, 142, 183, 0.3);
 }
 #classementExaTitle{
-    margin-top: 30px;
+    margin-bottom: 15px;
 }
 #graphClassementExa{
     width: 100%;
